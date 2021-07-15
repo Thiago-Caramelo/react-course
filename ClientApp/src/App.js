@@ -2,23 +2,13 @@ import React from "react";
 
 export default function App() {
   const singer = "Jimmy Cliff";
-  const albums = ["Hard Road", "Another Cycle", "Goodbye Yesterday"];
+  const isLoading = true;
 
-  function formatName(singer = "") {
-    return singer.toUpperCase();
-  }
+  if (isLoading) return <h2>...Loading</h2>;
 
   const element = (
     <>
-      <h1>♫ I can see clearly now the rain is gone by {formatName(singer)}♫</h1>
-      <h2>Albums</h2>
-      <ul>
-        {albums.map((album) => (
-          <li>
-            <h2>{album}</h2>
-          </li>
-        ))}
-      </ul>
+      <h1>♫ I can see clearly now the rain is gone by {singer}♫</h1>
     </>
   );
   return element;
