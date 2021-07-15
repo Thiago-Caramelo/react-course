@@ -1,5 +1,6 @@
 import React from "react";
 
 export default function App() {
-  return null;
+  const element = <h1>♫ I can see clearly now the rain is gone ♫</h1>;
+  return element;
 }
