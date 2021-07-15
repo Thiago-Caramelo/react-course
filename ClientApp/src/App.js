@@ -1,10 +1,6 @@
-import React, { Component } from "react";
-import { Layout } from "./components/Layout";
+import React from "react";
 
-export default class App extends Component {
-  static displayName = App.name;
-
-  render() {
-    return <Layout>Empty</Layout>;
-  }
+export default function App() {
+  const element = <h1>Hello, world!</h1>;
+  return element;
 }
