@@ -13,7 +13,8 @@ export default function App() {
 
   const element = (
     <>
-      <h1>♫ I can see clearly now the rain is gone by {singer}♫</h1>
+      <h1>♫ I can see clearly now the rain is gone♫</h1>
+      <h3>{singer}</h3>
       {photo}
     </>
   );
