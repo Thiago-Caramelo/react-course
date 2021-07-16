@@ -10,7 +10,8 @@ export default function App() {
 
   const element = (
     <>
-      <h1>♫ I can see clearly now the rain is gone by {formatName(singer)}♫</h1>
+      <h1>♫ I can see clearly now the rain is gone♫</h1>
+      <h3>{formatName(singer)}</h3>
       <h2>Albums</h2>
       <ul>
         {albums.map((album) => (
