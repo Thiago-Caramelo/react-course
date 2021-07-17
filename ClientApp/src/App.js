@@ -8,18 +8,18 @@ export default function App() {
     return singer.toUpperCase();
   }
 
+  const albumItems = albums.map((album) => (
+    <li>
+      <h2>{album}</h2>
+    </li>
+  ));
+
   const element = (
     <>
       <h1>♫ I can see clearly now the rain is gone♫</h1>
       <h3>{formatName(singer)}</h3>
       <h2>Albums</h2>
-      <ul>
-        {albums.map((album) => (
-          <li>
-            <h2>{album}</h2>
-          </li>
-        ))}
-      </ul>
+      <ul>{albumItems}</ul>
     </>
   );
   return element;
