@@ -1,27 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Form() {
+  const [name, setName] = useState("");
+
   function handleSubmit(e) {
     e.preventDefault();
-    alert("You clicked submit.");
   }
-  function handleSubmitValue(e, value) {
-    e.preventDefault();
-    alert("You clicked submit. ".concat(value));
+
+  function handleChange(event) {
+    setName(event.target.value);
+  }
+
+  function handleReset() {
+    setName("");
   }
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} onReset={handleReset}>
+        <label>
+          Name:
+          <input type="text" value={name} onChange={handleChange} />
+        </label>
         <button type="submit">Submit</button>
+        <button type="reset">Clear</button>
       </form>
-      <br />
-      <form onSubmit={(e) => handleSubmitValue(e, "123456789")}>
-        <button type="submit">Submit</button>
-      </form>
-
-      {/* Don't do this */}
-      {/* <form onSubmit={handleSubmitValue(e, "123456789")}> */}
     </>
   );
 }
