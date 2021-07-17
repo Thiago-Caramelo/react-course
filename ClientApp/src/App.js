@@ -2,15 +2,19 @@ import React from "react";
 
 export default function App() {
   const singer = "Jimmy Cliff";
-  const albums = ["Hard Road", "Another Cycle", "Goodbye Yesterday"];
+  const albums = [
+    { id: 1, name: "Hard Road" },
+    { id: 2, name: "Another Cycle" },
+    { id: 3, name: "Goodbye Yesterday" },
+  ];
 
   function formatName(singer = "") {
     return singer.toUpperCase();
   }
 
   const albumItems = albums.map((album) => (
-    <li>
-      <h2>{album}</h2>
+    <li key={album.id}>
+      <h2>{album.name}</h2>
     </li>
   ));
 
