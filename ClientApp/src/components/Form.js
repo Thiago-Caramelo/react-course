@@ -1,18 +1,23 @@
 import React, { useState } from "react";
 
 export default function Form() {
-  const [name, setName] = useState("");
+  const [attributes, setAttributes] = useState({ name: "", age: "" });
 
   function handleSubmit(e) {
     e.preventDefault();
   }
 
   function handleChange(event) {
-    setName(event.target.value);
+    debugger;
+    const name = event.target.name;
+    const value = event.target.value;
+    setAttributes((previousState) => {
+      return { ...previousState, [name]: value };
+    });
   }
 
   function handleReset() {
-    setName("");
+    setAttributes({ name: "", age: "" });
   }
 
   return (
@@ -20,8 +25,26 @@ export default function Form() {
       <form onSubmit={handleSubmit} onReset={handleReset}>
         <label>
           Name:
-          <input type="text" value={name} onChange={handleChange} />
+          <input
+            name="name"
+            type="text"
+            value={attributes.name}
+            onChange={handleChange}
+          />
         </label>
+        <br />
+        <br />
+        <label>
+          Age:
+          <input
+            name="age"
+            type="number"
+            value={attributes.age}
+            onChange={handleChange}
+          />
+        </label>
+        <br />
+        <br />
         <button type="submit">Submit</button>
         <button type="reset">Clear</button>
       </form>
