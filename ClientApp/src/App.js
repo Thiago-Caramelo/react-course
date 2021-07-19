@@ -1,6 +1,14 @@
 import React from "react";
-import Form from "./components/Form";
+import Layout from "./components/Layout";
+import Footer from "./components/Footer";
 
 export default function App() {
-  return <Form />;
+  return (
+    <Layout footer={<Footer />}>
+      <h3>
+        It's Friday again
+        <br /> Then Saturday, Sunday, what?
+      </h3>
+    </Layout>
+  );
 }
