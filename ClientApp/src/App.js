@@ -8,6 +8,7 @@ export default function App() {
     <img
       src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRONhv9WOZOXCOKHhgoObhmN6Ieh0hshF586ierCLwjZQhezDuB"
       width={photo_width}
+      alt={singer}
     />
   );
 
