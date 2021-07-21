@@ -7,6 +7,9 @@ export default function Footer() {
     fetch("/datetime")
       .then((resp) => resp.json())
       .then(setDateTime);
+    return () => {
+      // clean-up
+    };
   }, []);
 
   return <h6>All rights reserved {dateTime}</h6>;
